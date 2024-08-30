@@ -1,0 +1,45 @@
+{% extends 'titi/base.html' %}
+
+{% block content %}
+<section class="container mt-5">
+  <div class="text-center mb-5">
+    <h1>Formulaire de Prise de Rendez-vous</h1>
+    <p class="lead">Remplissez le formulaire ci-dessous pour prendre rendez-vous avec nos experts.</p>
+  </div>
+
+  <form action="#" method="post" class="mb-5">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Téléphone</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="date" class="form-label">Date du Rendez-vous</label>
+          <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        <div class="mb-3">
+          <label for="time" class="form-label">Heure du Rendez-vous</label>
+          <input type="time" class="form-control" id="time" name="time" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</section>
+{% endblock %}
